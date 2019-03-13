@@ -1,31 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace VLS.Models.Entiteis
+
+namespace ArkaServices
+
 {
-    public class GpsData
+    [Table("GpsData")]
+    public  class  GpsData
     {
         public Int64 Id { get; set; }
-        [Display(Name ="Header")]
-        public byte Header { get; set; }
-        public string  Lenght { get; set; }
-        public string   Imei { get; set; }
-        [ForeignKey("Imei")]
-        public virtual Vehicle Vehiche { get; set; }
+      
+        public string Header { get; set; }
+        public string Lenght { get; set; }
+        public string DataType { get; set; }
+        public Int64 Imei { get; set; }
+      
 
-        public string  VehicleStatus { get; set; }
-        public string  DateTime { get; set; }
+        public int VehicleId { get; set; }
+
+        public string VehicleStatus { get; set; }
+        public string DateTime { get; set; }
         public string BatteryVoltage { get; set; }
         public string SuplayVoltage { get; set; }
         public string Adc1 { get; set; }
-         public string Adc2 { get; set; }
+        public string Adc2 { get; set; }
         public string Adc3 { get; set; }
         public string Adc4 { get; set; }
-        public string  TemperatureA { get; set; }
+        public string TemperatureA { get; set; }
         public string TemperatureB { get; set; }
         public string LACCI { get; set; }
         public string CellId { get; set; }
@@ -42,10 +49,7 @@ namespace VLS.Models.Entiteis
         public string EW { get; set; }
         public string SerialNumber { get; set; }
         public string Checksum { get; set; }
-
-
-
-
+       
 
 
     }

@@ -12,13 +12,15 @@ using VLS.Models.Entiteis;
 namespace VLS.Areas.Admin.Controllers
 {
     public class CustomersController : Controller
-    {
+    {  
         private DataContext db = new DataContext();
 
         // GET: Admin/Customers
         public ActionResult Index()
         {
-            var customers = db.Customers.Include(c => c.CusomerType);
+            var customers = db.Customers.Include(c => c.CusomerType );
+            
+            
             return View(customers.ToList());
         }
 

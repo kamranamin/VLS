@@ -10,6 +10,7 @@ namespace VLS.Models.Entiteis
 	public class Customer
 	{
 
+        
 		public int Id { get; set; }
 
 		[Required(ErrorMessage = "لطفا نام را وارد نمایید!")]
@@ -19,7 +20,11 @@ namespace VLS.Models.Entiteis
 		[Required(ErrorMessage = "لطفا ایمیل را وارد نمایید!")]
 		[Display(Name = "ایمیل")]
 		[DataType(DataType.EmailAddress)]
-		public string Email { get; set; }
+        public string Email { get; set; }
+        
+      
+      
+       
 
 		[Required(ErrorMessage = "لطفا آدرس را وارد نمایید!")]
 		[Display(Name = "آدرس")]
@@ -29,8 +34,9 @@ namespace VLS.Models.Entiteis
 		[DataType(DataType.PhoneNumber)]
 		public string Tel { get; set; }
 
-		[Display(Name = "نوع مشتری")]
+		[Display(Name = "نوع")]
 		public int TypeId { get; set; }
+
 
 		[ForeignKey("TypeId")]
 		public virtual CustomerType CusomerType { get; set; }
